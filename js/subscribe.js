@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault(); // Prevent the default action of the link
                 
                 var email = emailInput.value; // Get the value from the input
+                var atIndex = email.indexOf("@");
+                var com = email.indexOf(".com")
                 
-                if (email) { // Check if the email input is not empty
+                if (atIndex == -1 || com == -1 || email.length <= 8) { // Check if the email input is not empty
                     alert('Thank you for subscribing with ' + email + '!');
                 } else {
                     alert('Please enter a valid email address.');
